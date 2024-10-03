@@ -1,7 +1,7 @@
 
 import Bundle from './bundle.js';
 
-// Clase Contract
+
 class Contract {
     constructor(bundle, cost, nombreFestejado) {
         this.bundle = bundle; 
@@ -10,5 +10,4 @@ class Contract {
     }
 }
 
-// Exportar la clase
 export default Contract;
