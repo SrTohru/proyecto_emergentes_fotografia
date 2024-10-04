@@ -1,4 +1,4 @@
-const pool = require('./db');
+const pool = require('./Database/db');
 
 class User {
     constructor(id = null, rol, name, email) {

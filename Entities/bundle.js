@@ -1,4 +1,4 @@
-const pool = require('./db');
+const pool = require('../Database/db');
 
 class Bundle {
     constructor(id = null, name, price) {
