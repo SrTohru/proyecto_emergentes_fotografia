@@ -1,33 +1,32 @@
-const Bundle = require('./bundle.js');
+const Bundle = require('../Entities/Bundle');
 (async () => {
-    try {
-        console.log("creacion");
-        const newBundleId = await Bundle.create('Paquete Prueba', 150.00);
-        console.log(`Nuevo Bundle creado con ID: ${newBundleId}`);
+  try {
+    console.log('creacion');
+    const newBundleId = await Bundle.create('Paquete Prueba', 150.0);
+    console.log(`Nuevo Bundle creado con ID: ${newBundleId}`);
 
-        console.log("id");
-        const bundle = await Bundle.read(newBundleId);
-        if (bundle) {
-            console.log(`Bundle leído: ${bundle.name}, Precio: ${bundle.price}`);
-        } else {
-            console.log('No se encontró el Bundle');
-        }
-
-        console.log("update");
-        await Bundle.update(newBundleId, 'Paquete Actualizado', 200.00);
-        console.log('Bundle actualizado');
-
-        console.log("todo");
-        const bundles = await Bundle.findAll();
-        bundles.forEach(b => {
-            console.log(`Bundle: ${b.name}, Precio: ${b.price}`);
-        });
-
-        console.log("delete");
-        await Bundle.delete(newBundleId);
-        console.log('Bundle eliminado');
-
-    } catch (error) {
-        console.error("Error en la prueba:", error);
+    console.log('id');
+    const bundle = await Bundle.read(newBundleId);
+    if (bundle) {
+      console.log(`Bundle leído: ${bundle.name}, Precio: ${bundle.price}`);
+    } else {
+      console.log('No se encontró el Bundle');
     }
+
+    console.log('update');
+    await Bundle.update(newBundleId, 'Paquete Actualizado', 200.0);
+    console.log('Bundle actualizado');
+
+    console.log('todo');
+    const bundles = await Bundle.findAll();
+    bundles.forEach((b) => {
+      console.log(`Bundle: ${b.name}, Precio: ${b.price}`);
+    });
+
+    console.log('delete');
+    await Bundle.delete(newBundleId);
+    console.log('Bundle eliminado');
+  } catch (error) {
+    console.error('Error en la prueba:', error);
+  }
 })();

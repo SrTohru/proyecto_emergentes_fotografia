@@ -1,5 +1,5 @@
 const mysql = require('mysql2');
-const ItemDAO = require('./Item');
+const ItemDAO = require('../Entities/Item');
 
 jest.mock('mysql2', () => {
   const mConnection = {

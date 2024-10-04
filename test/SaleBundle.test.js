@@ -1,5 +1,5 @@
 const mysql = require('mysql2');
-const SaleBundleDAO = require('./SaleBundle');
+const SaleBundleDAO = require('../Entities/SaleBundle');
 
 jest.mock('mysql2', () => {
   const mConnection = {
